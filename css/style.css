@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: southpark;
+    src: url("../webservice-start/fonts/southpark.ttf");
+}
+
+body {
+    background-image: url('../webservice-start/images/header-background.jpg');
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+header h1 {
+    text-align: center;
+    padding: 4vh 0;
+    font-size: 7vh;
+    font-family: southpark;
+    color: rgba(0,112,74,255);
+    font-weight: bolder;
+    transition: 0.3s;
+    transform-origin: center;
+
+}
+
+#characters-gallery {
+    max-width: 87vw;
+    margin: 0 auto 1vw;
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    justify-items: center;
+    transition: 0.3s;
+    transform-origin: center;
+
+}
+
+
+.character-card {
+    width: 15.5vw;
+    height: 15.5vw;
+    text-align: center;
+    box-shadow: 7px 7px 5px 5px rgba(0,0,0,0.6);
+    background-color: rgba(0,112,74,255);
+    border: 0.5vw solid white;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.character-card:hover {
+    background-color: rgba(0,72,58,255);
+    filter: none;
+}
+
+.character-card img {
+    width: 9vw;
+    padding-top: 0.3vw;
+    padding-bottom: 0.2vw;
+}
+
+.character-card h2 {
+    font-size: 1vw;
+    padding-top: 0.8vw;
+    color: rgba(136,212,226,255);
+    font-family: southpark;
+}
+
+/* Style for the pop-up container */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28vw;
+    min-height: 28vw;
+    text-align: center;
+    box-shadow: 7px 7px 5px 5px rgba(0,0,0,0.6);
+    background-color: rgba(136,212,226,255);
+    border: 0.5vw solid white;
+    border-radius: 1vw;
+    z-index: 9999;
+    filter: none; /* Remove blur from popup container */
+    pointer-events: auto; /* Enable interaction with the popup */
+}
+
+.popup-container h2, .popup-content p  {
+    color: rgba(0,112,74,255);
+    font-size: 1.2vw;
+    padding-top: 0.35vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+}
+
+.popup-content p {
+    font-size: 0.9vw;
+}
+
+
+.popup-content {
+    font-family: southpark;
+    text-align: center;
+    padding-top: 0.3vw;
+}
+
+.popup-content img {
+    width: 11vw;
+}
+
+
+    /* Style for the close button */
+.close-btn {
+    position: absolute;
+    top: -0.75vw;
+    right: 0.12vw;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 3vw;
+    color: rgba(0,112,74,255);
+}
+
+.favorite-button {
+    background-color: rgba(136,212,226,255);
+    color: rgba(0,112,74,255);
+    font-family: southpark;
+    font-size: 0.8vw;
+    padding: 0.3vw;
+    border: 0.3vw solid white;
+    border-radius: 0.5vw;
+    opacity: 0.7;
+}
+.popup-content .favorite-button {
+    position: fixed;
+    bottom: 0.7vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,112,74,255);
+    color: rgba(136,212,226,255);
+    font-size: 1vw;
+}
+
+.show-favorites-button {
+    background-color: rgba(0,112,74,255);
+    color: rgba(136,212,226,255);
+    font-family: southpark;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    border: 0.5vw solid rgba(136,212,226,255);
+    border-radius: 0.5vw;
+    margin-top: 0.8vw;
+    margin-bottom: 1.6vw;
+    opacity: 0.8;
+}
+.show-favorites-button:hover, .favorite-button:hover, .remove-favorite-button:hover {
+    opacity: 1;
+}
+
+
+.blurred {
+    filter: blur(3px);
+}
+
+.unblur {
+    filter: none;
+    background-color: red;
+}
+
+.favorite-indicator {
+    color: gold;
+    font-family: southpark;
+    padding-top: 0.5vw;
+}
+
+.favorite-character {
+    background-color: gold;
+}
+
+.remove-favorite-button {
+    color: rgba(136,212,226,255);
+    background-color: rgba(0,112,74,255);
+    font-family: southpark;
+    font-size: 0.8vw;
+    padding: 0.3vw;
+    margin-bottom: 0.6vw;
+    border: 0.3vw solid white;
+    border-radius: 0.5vw;
+    opacity: 0.8;
+}
+
